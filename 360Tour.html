@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour 360</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <style>
+    #panorama {
+        width: 600px;
+        height: 400px;
+    }
+    .leaflet-control-styleeditor .leaflet-control-styleeditor-cancel {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background-color: #919187;
+        -webkit-border-radius: 0 4px 4px 0;
+        border-radius: 0 4px 4px 0;
+        font-size: 12px;
+        line-height: 30px;
+        height: 30px;
+        color: white;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .leaflet-control-styleeditor .leaflet-control-styleeditor-cancel:hover {
+        background-color: #a0a098;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div id="panorama">
+</div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "P1",
+        "author": "Zeljko Soletic Dubrovnik",
+        "sceneFadeDuration": 750,
+        "autoLoad": true
+    },
+
+    "scenes": {
+        "P1": {
+            "title": "Plaza San Marco, Venecia, Italia",
+            "hfov": 90,
+            "pitch": 0,
+            "yaw": 180,
+            "type": "equirectangular",
+            "panorama": "https://cloudflare1.360gigapixels.com/pano/gospar2/01915624__DSC0794_Panorama_0794_zlatni_sat_ispred_duzdeve.jpg/equirect_crop_3_1/6.jpg",
+            "autoLoad": true,
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 180,
+                    "type": "scene",
+                    "text": "Puente de la Academia, Venecia, Italia",
+                    "sceneId": "P2"
+                }
+            ]
+        },
+
+        "P2": {
+            "title": "Puente de la Academia, Venecia, Italia",
+            "author": "Heiner Straesser",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "https://cloudflare1.360gigapixels.com/pano/gospar2/01915620_Sunrise_at_Ponte_dell_Accademia__Venice__2019._DSC0706_Panorama.jpg/equirect_crop_3_1/6.jpg",
+            "hotSpotDebug": true,
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Plaza San Marco, Italia",
+                    "sceneId": "P1",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                },
+                {
+                    "pitch": 0,
+                    "yaw": -180,
+                    "type": "scene",
+                    "text": "Punta de la Dogana, Venecia, Italia",
+                    "sceneId": "P3",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        },
+
+        "P3": {
+            "title": "Punta de la Dogana, Venecia, Italia",
+            "author": "Heiner Straesser",
+            "hfov": 110,
+            "yaw": 5,
+            "type": "equirectangular",
+            "panorama": "https://cloudflare1.360gigapixels.com/pano/heiner--straesser/01276143_001--101229-415-jpg/equirect_crop_3_1/6.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 0,
+                    "type": "scene",
+                    "text": "Puente de la Academia, Venecia, Italia",
+                    "sceneId": "P2",
+                    "targetYaw": 0,
+                    "targetPitch": 0
+                }
+            ]
+        }
+    }
+});
+</script>
+
+</body>
+</html>
